@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansflow | Premium Car Rental & Luxury Vehicle Fleet</title>
+    <meta name="description" content="Rent premium luxury vehicles and sports cars in minutes. Transparent pricing, instant digital identity verification, and doorstep delivery. Drive your dream car today.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <img src="assets/images/logo_dark.png" alt="Hansflow Logo" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#fleet" class="nav-link">Fleet</a>
+                <a href="#features" class="nav-link">Why Us</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#app" class="nav-link">App</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="#booking-card" class="btn btn-secondary nav-book-btn">Search Fleet</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="#fleet" class="drawer-link">Fleet</a>
+            <a href="#features" class="drawer-link">Why Us</a>
+            <a href="#experience" class="drawer-link">Experience</a>
+            <a href="#process" class="drawer-link">Process</a>
+            <a href="#app" class="drawer-link">App</a>
+            <a href="#faq" class="drawer-link">FAQ</a>
+            <a href="#booking-card" class="btn btn-primary drawer-book-btn">Book Now</a>
+        </nav>
+    </div>
+
+    <!-- Cinematic Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-wrapper">
+            <img src="assets/images/hero_car.jpg" alt="Luxury sports car in front of city skyline" class="hero-bg" id="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-container container">
+            <div class="hero-content scroll-reveal fade-up">
+                <span class="badge hero-badge">Premium Car Rental</span>
+                <h1 class="hero-title">Drive Your<br>Dream Car Today.</h1>
+                <p class="hero-subtitle">Rent premium vehicles in minutes with transparent pricing, instant booking, and doorstep delivery.</p>
+                <div class="hero-actions">
+                    <a href="#fleet" class="btn btn-primary ripple">Book Now</a>
+                    <a href="#fleet" class="btn btn-outline ripple">Explore Fleet</a>
+                </div>
+            </div>
+            
+            <!-- Floating Booking Card -->
+            <div class="booking-card scroll-reveal fade-up" id="booking-card">
+                <h3 class="booking-card-title">Book Your Journey</h3>
+                <form id="hero-booking-form" class="booking-form">
+                    <div class="input-group">
+                        <label for="pickup-loc">Pickup Location</label>
+                        <select id="pickup-loc" required>
+                            <option value="" disabled selected>Select Location</option>
+                            <option value="Beverly Hills">Beverly Hills, LA</option>
+                            <option value="Downtown SF">Downtown, San Francisco</option>
+                            <option value="Manhattan">Manhattan, NY</option>
+                            <option value="Miami Beach">Miami Beach, FL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="return-loc">Return Location</label>
+                        <select id="return-loc" required>
+                            <option value="" disabled selected>Select Location</option>
+                            <option value="Beverly Hills">Beverly Hills, LA</option>
+                            <option value="Downtown SF">Downtown, San Francisco</option>
+                            <option value="Manhattan">Manhattan, NY</option>
+                            <option value="Miami Beach">Miami Beach, FL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="return-date">Return Date</label>
+                            <input type="date" id="return-date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="driver-age">Driver Age</label>
+                        <select id="driver-age" required>
+                            <option value="25" selected>25 years or older</option>
+                            <option value="21">21 - 24 years</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full ripple">Search Vehicles</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item scroll-reveal fade-up">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Happy Customers (K+)</div>
+                </div>
+                <div class="stat-item scroll-reveal fade-up" data-delay="100">
+                    <div class="stat-number" data-target="450">0</div>
+                    <div class="stat-label">Vehicles Available</div>
+                </div>
+                <div class="stat-item scroll-reveal fade-up" data-delay="200">
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">Cities Covered</div>
+                </div>
+                <div class="stat-item scroll-reveal fade-up" data-delay="300">
+                    <div class="stat-number" data-target="4.9" data-decimals="1">0.0</div>
+                    <div class="stat-label">Customer Rating (★)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Fleet Section -->
+    <section class="fleet-section section" id="fleet">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">Elite Fleet</span>
+                <h2 class="section-title">Explore Our Premium Fleet</h2>
+                <p class="section-subtitle">Choose from our curated collection of high-performance sports cars, luxury sedans, and electric cruisers.</p>
+            </div>
+            
+            <!-- Category Filter Tabs -->
+            <div class="fleet-filters scroll-reveal fade-up">
+                <button class="filter-btn active" data-filter="all">All Fleet</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+                <button class="filter-btn" data-filter="electric">Electric</button>
+                <button class="filter-btn" data-filter="suv">SUV</button>
+            </div>
+            
+            <!-- Fleet Grid -->
+            <div class="fleet-grid" id="fleet-grid">
+                <!-- Porsche 911 Carrera (Sports) -->
+                <div class="fleet-card scroll-reveal fade-up" data-category="sports">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_porsche.jpg" alt="Porsche 911 Carrera" class="fleet-img">
+                        <span class="card-badge">Sports</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">Porsche 911 Carrera</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 22h18M5 3v15h14V3M9 10h6" />
+                                </svg>
+                                <span>Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>4 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$350</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="Porsche 911 Carrera" data-price="350">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tesla Model S Plaid (Electric) -->
+                <div class="fleet-card scroll-reveal fade-up" data-delay="100" data-category="electric">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_tesla.jpg" alt="Tesla Model S Plaid" class="fleet-img">
+                        <span class="card-badge">Electric</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">Tesla Model S Plaid</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.95</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                </svg>
+                                <span>Electric</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>5 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$250</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="Tesla Model S Plaid" data-price="250">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BMW M4 Coupe (Sports) -->
+                <div class="fleet-card scroll-reveal fade-up" data-delay="200" data-category="sports">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_bmw.jpg" alt="BMW M4 Coupe" class="fleet-img">
+                        <span class="card-badge">Sports</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">BMW M4 Coupe</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 22h18M5 3v15h14V3M9 10h6" />
+                                </svg>
+                                <span>Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>4 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$200</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="BMW M4 Coupe" data-price="200">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mercedes S-Class (Luxury) -->
+                <div class="fleet-card scroll-reveal fade-up" data-category="luxury">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_mercedes.jpg" alt="Mercedes S-Class" class="fleet-img">
+                        <span class="card-badge">Luxury</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">Mercedes-Benz S-Class</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 22h18M5 3v15h14V3M9 10h6" />
+                                </svg>
+                                <span>Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>5 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$280</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="Mercedes-Benz S-Class" data-price="280">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audi RS e-tron GT (Electric) -->
+                <div class="fleet-card scroll-reveal fade-up" data-delay="100" data-category="electric">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_audi.jpg" alt="Audi RS e-tron GT" class="fleet-img">
+                        <span class="card-badge">Electric</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">Audi RS e-tron GT</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.85</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                </svg>
+                                <span>Electric</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>4 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$240</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="Audi RS e-tron GT" data-price="240">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Range Rover Sport (SUV) -->
+                <div class="fleet-card scroll-reveal fade-up" data-delay="200" data-category="suv">
+                    <div class="fleet-img-container">
+                        <img src="assets/images/car_rangerover.jpg" alt="Range Rover Sport" class="fleet-img">
+                        <span class="card-badge">SUV</span>
+                    </div>
+                    <div class="fleet-info">
+                        <div class="fleet-header">
+                            <h3 class="fleet-model">Range Rover Sport</h3>
+                            <div class="fleet-rating">
+                                <svg class="star-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.75</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-specs">
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 22h18M5 3v15h14V3M9 10h6" />
+                                </svg>
+                                <span>Hybrid</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <span>5 Seats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="fleet-footer">
+                            <div class="fleet-price-box">
+                                <span class="price-val">$220</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm book-trigger" data-car="Range Rover Sport" data-price="220">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features-section section bg-dark-secondary" id="features">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">Why Us</span>
+                <h2 class="section-title">The Hansflow Advantage</h2>
+                <p class="section-subtitle">We have re-engineered car rental from the ground up to offer the world's most seamless driving experience.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Card 1: Instant Booking -->
+                <div class="feature-card scroll-reveal fade-up">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <path d="M22 4L12 14.01l-3-3" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Instant Booking</h3>
+                    <p class="feature-desc">Skip the counters. Book online in under 2 minutes with instant real-time confirmation.</p>
+                </div>
+                
+                <!-- Card 2: No Hidden Fees -->
+                <div class="feature-card scroll-reveal fade-up" data-delay="100">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <line x1="12" y1="4" x2="12" y2="20" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">No Hidden Fees</h3>
+                    <p class="feature-desc">All-inclusive pricing. What you see is exactly what you pay—no surprise charges at checkout.</p>
+                </div>
+                
+                <!-- Card 3: 24/7 Support -->
+                <div class="feature-card scroll-reveal fade-up" data-delay="200">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p class="feature-desc">Dedicated premium concierge support is available via call or text whenever you need assistance.</p>
+                </div>
+                
+                <!-- Card 4: Fully Insured -->
+                <div class="feature-card scroll-reveal fade-up">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Fully Insured Cars</h3>
+                    <p class="feature-desc">Drive with complete peace of mind. Comprehensive premium collision and liability protection is built-in.</p>
+                </div>
+                
+                <!-- Card 5: Doorstep Delivery -->
+                <div class="feature-card scroll-reveal fade-up" data-delay="100">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Doorstep Delivery</h3>
+                    <p class="feature-desc">We bring the luxury to you. Get your vehicle delivered directly to your home, office, or hotel.</p>
+                </div>
+                
+                <!-- Card 6: Verified Drivers -->
+                <div class="feature-card scroll-reveal fade-up" data-delay="200">
+                    <div class="feature-icon-wrapper">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <polyline points="16 11 18 13 22 9" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Verified Drivers</h3>
+                    <p class="feature-desc">High-trust, fully verified community guidelines ensuring safety and reliability across every ride.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Experience Section (Split Layout) -->
+    <section class="experience-section section" id="experience">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-img-box scroll-reveal fade-right">
+                    <img src="assets/images/lifestyle_drive.jpg" alt="Person driving luxury vehicle at sunset" class="experience-img">
+                </div>
+                <div class="split-content-box scroll-reveal fade-left">
+                    <span class="badge">The Experience</span>
+                    <h2 class="section-title">Designed for Discerning Drivers</h2>
+                    <p class="experience-text">
+                        Every vehicle in our fleet undergoes a rigorous multi-point inspection and deep detailing before arriving at your doorstep. We don't just rent cars; we deliver pristine driving environments that elevate your journey.
+                    </p>
+                    <p class="experience-text">
+                        Whether you are carving coastal highway corners at sunset, attending high-profile business meetings, or taking a weekend getaway, Hansflow provides the absolute peak of automotive sophistication and digital simplicity.
+                    </p>
+                    <a href="#fleet" class="btn btn-primary ripple">Discover The Fleet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Categories Section -->
+    <section class="categories-section section bg-dark-secondary" id="categories">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">Categories</span>
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Find the exact vehicle configuration that matches your driving requirements and lifestyle.</p>
+            </div>
+            
+            <div class="category-grid">
+                <!-- Card 1: Luxury -->
+                <div class="category-card scroll-reveal fade-up" data-category="luxury">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Refined & Elegant</span>
+                        <h3 class="category-name">Luxury</h3>
+                        <p class="category-desc">Executive comfort with premium cabins and top-tier amenities.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+                
+                <!-- Card 2: SUV -->
+                <div class="category-card scroll-reveal fade-up" data-delay="100" data-category="suv">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Spacious & Dominant</span>
+                        <h3 class="category-name">SUV</h3>
+                        <p class="category-desc">Dominate any terrain with roomy, all-weather high-luxury cruisers.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Sedan -->
+                <div class="category-card scroll-reveal fade-up" data-delay="200" data-category="luxury">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Sleek & Professional</span>
+                        <h3 class="category-name">Sedan</h3>
+                        <p class="category-desc">Modern aerodynamics meeting premium styling and efficiency.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Electric -->
+                <div class="category-card scroll-reveal fade-up" data-category="electric">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Sustainable & Rapid</span>
+                        <h3 class="category-name">Electric</h3>
+                        <p class="category-desc">Instant torque and cutting-edge battery technology.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+                
+                <!-- Card 5: Convertible -->
+                <div class="category-card scroll-reveal fade-up" data-delay="100" data-category="sports">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Open Air Performance</span>
+                        <h3 class="category-name">Convertible</h3>
+                        <p class="category-desc">Experience the road in raw open-sky performance configurations.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+                
+                <!-- Card 6: Sports -->
+                <div class="category-card scroll-reveal fade-up" data-delay="200" data-category="sports">
+                    <div class="category-card-overlay"></div>
+                    <div class="category-card-content">
+                        <span class="category-meta">Raw Speed & Agility</span>
+                        <h3 class="category-name">Sports</h3>
+                        <p class="category-desc">Precision-engineered track speed, handling, and racing pedigree.</p>
+                        <span class="category-link">View Vehicles &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Process / Timeline -->
+    <section class="process-section section" id="process">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">How It Works</span>
+                <h2 class="section-title">Your Rental, Reimagined</h2>
+                <p class="section-subtitle">Four simple, digital-first steps to get you behind the wheel of your dream car.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-grid">
+                    <!-- Step 1 -->
+                    <div class="timeline-item scroll-reveal fade-up">
+                        <div class="timeline-node">1</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Choose Car</h3>
+                            <p class="timeline-desc">Browse our elite curated fleet and pick the model that perfectly fits your journey.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="timeline-item scroll-reveal fade-up" data-delay="100">
+                        <div class="timeline-node">2</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Book Online</h3>
+                            <p class="timeline-desc">Select rental dates, preferred delivery address, and confirm instantly with card payment.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="timeline-item scroll-reveal fade-up" data-delay="200">
+                        <div class="timeline-node">3</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Verify Identity</h3>
+                            <p class="timeline-desc">Complete a secure 60-second online check by scanning your driver's license.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="timeline-item scroll-reveal fade-up" data-delay="300">
+                        <div class="timeline-node">4</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Pick Up & Drive</h3>
+                            <p class="timeline-desc">We deliver the car to your exact location, fully charged or fueled, ready for launch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="testimonials-section section bg-dark-secondary" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">Reviews</span>
+                <h2 class="section-title">Trusted by Tech & Business Leaders</h2>
+                <p class="section-subtitle">Hear from our clients who demand reliability, speed, and premium service.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card scroll-reveal fade-up">
+                    <div class="test-header">
+                        <div class="test-user">
+                            <div class="test-avatar font-avatar">SJ</div>
+                            <div>
+                                <h4 class="test-name">Sarah Jenkins</h4>
+                                <p class="test-company">VP of Design, Stripe</p>
+                            </div>
+                        </div>
+                        <div class="test-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="test-review">
+                        "The booking was completed in under 2 minutes. The Porsche 911 was delivered to my hotel in absolutely pristine condition. Unbelievable luxury service, zero hassle."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card scroll-reveal fade-up" data-delay="100">
+                    <div class="test-header">
+                        <div class="test-user">
+                            <div class="test-avatar font-avatar">MV</div>
+                            <div>
+                                <h4 class="test-name">Marcus Vance</h4>
+                                <p class="test-company">Founder, Linear</p>
+                            </div>
+                        </div>
+                        <div class="test-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="test-review">
+                        "Hansflow has completely redefined the car rental paradigm. Clear pricing, flawless digital identity checks, gorgeous cars, and no waiting in airport terminal lines."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card scroll-reveal fade-up" data-delay="200">
+                    <div class="test-header">
+                        <div class="test-user">
+                            <div class="test-avatar font-avatar">ER</div>
+                            <div>
+                                <h4 class="test-name">Elena Rostova</h4>
+                                <p class="test-company">Director of Operations, Tesla</p>
+                            </div>
+                        </div>
+                        <div class="test-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="test-review">
+                        "Impeccable service and the cleanest cars I've ever rented. The e-tron GT was delivered fully charged, detailing was spectacular, and the delivery driver was professional."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Promotion Section -->
+    <section class="app-section section" id="app">
+        <div class="container">
+            <div class="app-split">
+                <!-- App Mockup Image -->
+                <div class="app-mockup-wrapper scroll-reveal fade-right">
+                    <img src="assets/images/app_mockup.jpg" alt="Hansflow Mobile App Mockup on iPhone" class="app-mockup">
+                    <div class="app-mockup-glow"></div>
+                </div>
+                
+                <!-- App Text & Info -->
+                <div class="app-content-box scroll-reveal fade-left">
+                    <span class="badge">Hansflow Mobile App</span>
+                    <h2 class="section-title">Hansflow in Your Pocket</h2>
+                    <p class="app-desc">
+                        Manage your rentals, select delivery destinations in real-time, unlock your vehicle contactlessly, and contact our concierge team at any time using the Hansflow iOS and Android application.
+                    </p>
+                    
+                    <div class="app-download-area">
+                        <div class="qr-box">
+                            <!-- Premium Custom Styled SVG QR Code -->
+                            <svg class="qr-code-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="5" width="25" height="25" stroke-width="4" />
+                                <rect x="10" y="10" width="15" height="15" fill="currentColor" />
+                                <rect x="70" y="5" width="25" height="25" stroke-width="4" />
+                                <rect x="75" y="10" width="15" height="15" fill="currentColor" />
+                                <rect x="5" y="70" width="25" height="25" stroke-width="4" />
+                                <rect x="10" y="75" width="15" height="15" fill="currentColor" />
+                                <!-- QR Noise dots -->
+                                <path d="M45 10h10v10H45zM55 20h10v10H55zM35 35h15v10H35zM60 40h15v10H60zM40 55h20v5H40zM75 70h15v15H75zM45 75h10v15H45z" fill="currentColor" stroke="none" />
+                            </svg>
+                            <span class="qr-text">Scan to download</span>
+                        </div>
+                        
+                        <div class="download-badges">
+                            <!-- App Store Button -->
+                            <a href="#" class="badge-btn">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-.96.04-2.13.64-2.82 1.45-.6.69-1.12 1.83-.98 2.94.97.08 2.15-.52 2.81-1.33z" />
+                                </svg>
+                                <div class="badge-text">
+                                    <span class="sub-text">Download on the</span>
+                                    <span class="main-text">App Store</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Google Play Button -->
+                            <a href="#" class="badge-btn">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3.609 1.814L13.783 12 3.609 22.186A2.22 2.22 0 0 1 3 20.598V3.402c0-.665.222-1.229.609-1.588zm11.29 9.07l3.297-3.297a2.22 2.22 0 0 1 0 3.136L14.899 10.884zm-5.07-5.07l7.73 7.73L19 12l-1.441-1.441-7.73-7.73a2.22 2.22 0 0 1-1.439.467 2.22 2.22 0 0 1 1.439 2.018z" />
+                                </svg>
+                                <div class="badge-text">
+                                    <span class="sub-text">Get it on</span>
+                                    <span class="main-text">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section section bg-dark-secondary" id="faq">
+        <div class="container">
+            <div class="section-header text-center scroll-reveal fade-up">
+                <span class="badge">FAQs</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to clear up booking requirements, delivery services, and policies.</p>
+            </div>
+            
+            <div class="faq-accordion-wrapper scroll-reveal fade-up">
+                <!-- Accordion Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What documents are required to rent a vehicle?</span>
+                        <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-panel">
+                        <div class="faq-panel-content">
+                            <p>To hire a vehicle, you will need a valid driver's license held for at least 1 year, a passport or valid national identity card, and a major credit card in the primary driver's name. International drivers may require an International Driving Permit (IDP) if their domestic license is not in English/Latin characters.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Is there a security deposit required?</span>
+                        <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-panel">
+                        <div class="faq-panel-content">
+                            <p>Yes. A temporary pre-authorization hold is placed on your credit card at the time of delivery. The amount ranges from $500 to $2,500 depending on the vehicle class (e.g., higher for sports cars). The hold is fully released within 24-48 hours after returning the car in its original condition.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Can I have the vehicle delivered to my location?</span>
+                        <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-panel">
+                        <div class="faq-panel-content">
+                            <p>Absolutely. We offer doorstep delivery and pickup as standard services. You can select delivery to your home, office, hotel, or directly to airport VIP arrival lounges. Free delivery is included for rentals of 3 days or more within our standard operating zones.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What is the minimum age to rent a vehicle?</span>
+                        <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-panel">
+                        <div class="faq-panel-content">
+                            <p>The minimum rental age is 21 years. Drivers aged 21-24 are allowed to book sports, electric, and standard SUVs, but are subject to a young driver premium ($30/day) and an increased security deposit hold. Luxury and supercar categories (e.g., S-Class, Porsche 911) require the driver to be at least 25 years old.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What is your cancellation policy?</span>
+                        <svg class="accordion-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-panel">
+                        <div class="faq-panel-content">
+                            <p>We provide free cancellations with a full 100% refund up to 24 hours prior to your scheduled rental start time. Cancellations made within less than 24 hours will incur a one-day rental charge penalty, and the remainder of your booking payment will be refunded.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Column Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Info and Newsletter -->
+                <div class="footer-col footer-info-col">
+                    <a href="#" class="logo-container footer-logo">
+                        <img src="assets/images/logo_dark.png" alt="Hansflow Logo" class="logo-img">
+                    </a>
+                    <p class="footer-about">Redefining automotive luxury and digital convenience. Rent premium sports and luxury cars on-demand.</p>
+                    
+                    <form class="newsletter-form" id="newsletter-form">
+                        <label for="newsletter-email" class="sr-only">Email Address</label>
+                        <input type="email" id="newsletter-email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary ripple">Subscribe</button>
+                    </form>
+                    <div class="newsletter-msg" id="newsletter-msg"></div>
+                </div>
+                
+                <!-- Column 2: Fleet Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Fleet</h4>
+                    <ul class="footer-links">
+                        <li><a href="#fleet" class="filter-link" data-filter="sports">Sports Cars</a></li>
+                        <li><a href="#fleet" class="filter-link" data-filter="luxury">Luxury Sedans</a></li>
+                        <li><a href="#fleet" class="filter-link" data-filter="electric">Electric Cars</a></li>
+                        <li><a href="#fleet" class="filter-link" data-filter="suv">Super SUVs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Support -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">Help Center</a></li>
+                        <li><a href="#experience">Delivery Areas</a></li>
+                        <li><a href="#faq">Rental FAQs</a></li>
+                        <li><a href="#navbar">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Legal & Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="contact-details">
+                    <span>Email: support@hansflow.rent</span>
+                    <span class="contact-divider">|</span>
+                    <span>Phone: +1 (800) 555-0199</span>
+                </div>
+                
+                <div class="footer-socials">
+                    <!-- Twitter -->
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+                
+                <p class="copyright">&copy; 2026 Hansflow Rentals. Crafted for excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Multi-Step Booking Modal -->
+    <div class="modal" id="booking-modal" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <img src="assets/images/logo_dark.png" alt="Hansflow Logo" class="logo-img modal-logo">
+            </div>
+            <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+            
+            <!-- Step Indicators -->
+            <div class="modal-steps">
+                <div class="modal-step active" data-step="1">1. Summary</div>
+                <div class="modal-step" data-step="2">2. Identity</div>
+                <div class="modal-step" data-step="3">3. Confirm</div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- STEP 1: SUMMARY -->
+                <div class="modal-pane active" id="pane-1">
+                    <h3 class="pane-title">Booking Summary</h3>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span class="summary-label">Selected Vehicle</span>
+                            <span class="summary-value" id="summary-car">Porsche 911 Carrera</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Pickup & Return</span>
+                            <span class="summary-value" id="summary-loc">Beverly Hills, LA</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Rental Duration</span>
+                            <span class="summary-value" id="summary-duration">3 Days</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row price-row">
+                            <span class="summary-label">Daily Rate</span>
+                            <span class="summary-value" id="summary-rate">$350</span>
+                        </div>
+                        <div class="summary-row price-row total-row">
+                            <span class="summary-label">Total Payment</span>
+                            <span class="summary-value" id="summary-total">$1,050</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pane-actions">
+                        <button class="btn btn-outline pane-cancel-btn">Cancel</button>
+                        <button class="btn btn-primary pane-next-btn ripple" data-next="2">Proceed to Verification</button>
+                    </div>
+                </div>
+                
+                <!-- STEP 2: IDENTITY VERIFICATION -->
+                <div class="modal-pane" id="pane-2">
+                    <h3 class="pane-title">Driver Verification</h3>
+                    <p class="pane-subtitle">Scan or upload your driver's license to complete identity verification in 60 seconds.</p>
+                    
+                    <form id="verification-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="driver-name">Full Name (as on license)</label>
+                                <input type="text" id="driver-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="driver-license-num">License Number</label>
+                                <input type="text" id="driver-license-num" placeholder="DL-984712398" required>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-area" id="license-upload-zone">
+                            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            <span class="upload-text">Drag & drop your driver's license or click to upload</span>
+                            <span class="upload-subtext">Supported formats: JPG, PNG, PDF (Max 5MB)</span>
+                            <input type="file" id="license-file" class="sr-only" accept="image/*,.pdf">
+                            <div class="upload-success-indicator" id="upload-success-indicator">
+                                <span class="indicator-checkmark">&check;</span> License Document Ready
+                            </div>
+                        </div>
+                        
+                        <div class="pane-actions">
+                            <button type="button" class="btn btn-outline pane-prev-btn" data-prev="1">Back</button>
+                            <button type="submit" class="btn btn-primary pane-next-btn ripple">Verify & Confirm Booking</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- STEP 3: BOOKING SUCCESS -->
+                <div class="modal-pane" id="pane-3">
+                    <div class="success-screen">
+                        <div class="success-icon-wrapper">
+                            <svg class="success-checkmark-svg" viewBox="0 0 52 52">
+                                <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="success-title">Booking Confirmed!</h3>
+                        <p class="success-desc">
+                            Your reservation has been secured. Your digital verification was successful. A confirmation email with contract details has been sent.
+                        </p>
+                        
+                        <div class="success-details-card">
+                            <div class="details-row">
+                                <span>Booking ID</span>
+                                <strong id="success-booking-id">VL-984712</strong>
+                            </div>
+                            <div class="details-row">
+                                <span>Vehicle</span>
+                                <strong id="success-vehicle-name">Porsche 911 Carrera</strong>
+                            </div>
+                            <div class="details-row">
+                                <span>Delivery Address</span>
+                                <strong id="success-delivery-loc">Beverly Hills, LA</strong>
+                            </div>
+                            <div class="details-row">
+                                <span>Delivery Schedule</span>
+                                <strong id="success-delivery-time">TBD (Concierge will contact you)</strong>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary ripple success-close-btn">Return to Fleet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript file -->
+    <script src="main.js"></script>
+</body>
+</html>
