@@ -6,24 +6,24 @@
 :root {
     --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
-    /* Luxury Dark Color Palette */
-    --color-bg-primary: #0B0B0B;        /* Deep Obsidian */
-    --color-bg-secondary: #141414;      /* Card / Accordion Obsidian */
-    --color-bg-tertiary: #1C1C1E;       /* Input backgrounds */
+    /* Premium Light White-Blue Color Palette */
+    --color-bg-primary: #FFFFFF;        /* Solid white background */
+    --color-bg-secondary: #F8FAFC;      /* Soft slate-white for cards */
+    --color-bg-tertiary: #F1F5F9;       /* Input backgrounds */
     
-    --color-text-primary: #FFFFFF;      /* High contrast white */
-    --color-text-secondary: #9CA3AF;    /* Muted Slate Gray */
-    --color-text-muted: #6B7280;        /* Subtle gray */
+    --color-text-primary: #0F172A;      /* Deep Slate / Charcoal headings */
+    --color-text-secondary: #475569;    /* slate-600 for readable body text */
+    --color-text-muted: #94A3B8;        /* slate-400 for labels & subtitles */
     
     --color-accent: #2563EB;            /* Electric Blue (Primary Action) */
-    --color-accent-hover: #3B82F6;      /* Bright Blue */
-    --color-accent-glow: rgba(37, 99, 235, 0.15);
+    --color-accent-hover: #1D4ED8;      /* Royal Blue (darker hover for contrast) */
+    --color-accent-glow: rgba(37, 99, 235, 0.08);
     
-    --color-success: #10B981;           /* Emerald success */
-    --color-success-glow: rgba(16, 185, 129, 0.15);
+    --color-success: #059669;           /* Darker emerald for light theme contrast */
+    --color-success-glow: rgba(5, 150, 105, 0.08);
     
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-color-hover: rgba(255, 255, 255, 0.18);
+    --border-color: rgba(15, 23, 42, 0.08);
+    --border-color-hover: rgba(15, 23, 42, 0.16);
     
     /* Layout Tokens */
     --container-max-width: 1280px;
@@ -33,10 +33,10 @@
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     
-    /* Shadows */
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-premium: 0 30px 60px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.2);
+    /* Shadows - adjusted for light backgrounds */
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.03);
+    --shadow-premium: 0 20px 45px rgba(15, 23, 42, 0.06);
+    --shadow-glow: 0 0 35px rgba(37, 99, 235, 0.12);
 }
 
 /* --- Base & Reset Styles --- */
@@ -239,7 +239,7 @@ a {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(11, 11, 11, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
@@ -248,8 +248,8 @@ a {
 
 .navbar.scrolled {
     padding: 0.5rem 0;
-    background-color: rgba(11, 11, 11, 0.85);
-    border-bottom-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom-color: rgba(15, 23, 42, 0.05);
 }
 
 .nav-container {
@@ -267,13 +267,13 @@ a {
 }
 
 .logo-img {
-    height: 44px;
+    height: 77px;
     width: auto;
     display: block;
 }
 
 .footer-logo .logo-img {
-    height: 48px;
+    height: 84px;
 }
 
 .modal-header {
@@ -283,7 +283,7 @@ a {
 }
 
 .modal-logo {
-    height: 36px;
+    height: 63px;
     width: auto;
 }
 
@@ -402,7 +402,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 70% 50%, rgba(11, 11, 11, 0.4) 0%, rgba(11, 11, 11, 0.95) 85%);
+    background: radial-gradient(circle at 70% 50%, rgba(249, 251, 255, 0.25) 0%, rgba(249, 251, 255, 0.96) 80%);
     z-index: -1;
 }
 
@@ -446,10 +446,10 @@ a {
 
 /* --- Floating Booking Card --- */
 .booking-card {
-    background: rgba(20, 20, 20, 0.45);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: var(--border-radius-lg);
     padding: 2.5rem;
     box-shadow: var(--shadow-premium);
@@ -488,7 +488,7 @@ a {
 
 .booking-form select,
 .booking-form input {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(15, 23, 42, 0.04);
     border: 1px solid var(--border-color);
     color: var(--color-text-primary);
     padding: 0.875rem 1rem;
@@ -502,8 +502,8 @@ a {
 .booking-form select:focus,
 .booking-form input:focus {
     border-color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.15);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.08);
 }
 
 .booking-form select option {
@@ -542,7 +542,7 @@ a {
     color: var(--color-text-primary);
     margin-bottom: 0.5rem;
     letter-spacing: -0.03em;
-    background: linear-gradient(to right, #FFFFFF, #9CA3AF);
+    background: linear-gradient(to right, #0F172A, #2563EB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -973,18 +973,20 @@ a {
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: #FFFFFF;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     padding: 2.5rem;
     transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
 }
 
 .testimonial-card:hover {
     border-color: var(--border-color-hover);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-premium);
 }
 
 .test-header {
@@ -1203,8 +1205,8 @@ a {
 }
 
 .faq-item.active {
-    border-color: rgba(255, 255, 255, 0.15);
-    background-color: rgba(255, 255, 255, 0.01);
+    border-color: rgba(37, 99, 235, 0.3);
+    background-color: rgba(37, 99, 235, 0.03);
 }
 
 .faq-item.active .accordion-arrow {
