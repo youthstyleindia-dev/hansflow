@@ -281,8 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Data placeholders
     let selectedCar = '';
     let dailyRate = 0;
-    let pickupLocation = 'Beverly Hills, LA';
-    let returnLocation = 'Beverly Hills, LA';
+    let pickupLocation = 'Marol, Andheri East';
+    let returnLocation = 'Marol, Andheri East';
     let rentalDays = 3;
     let totalCost = 0;
 
@@ -297,8 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const formPickupDate = document.getElementById('pickup-date').value;
         const formReturnDate = document.getElementById('return-date').value;
         
-        if (formPickup) pickupLocation = formPickup + ", LA";
-        if (formReturn) returnLocation = formReturn + ", LA";
+        if (formPickup) pickupLocation = formPickup;
+        if (formReturn) returnLocation = formReturn;
         
         if (formPickupDate && formReturnDate) {
             const diffTime = Math.abs(new Date(formReturnDate) - new Date(formPickupDate));
