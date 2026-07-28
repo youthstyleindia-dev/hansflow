@@ -214,6 +214,25 @@ function ImagePlane({
   );
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("WebGL error caught by Boundary:", error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
+
 export const RevealWaveImage = ({
   src,
   revealRadius = 0.2,
@@ -227,8 +246,17 @@ export const RevealWaveImage = ({
 }) => {
   const [isMouseInCanvas, setIsMouseInCanvas] = useState(false);
   const [aspectRatio, setAspectRatio] = useState(null);
+  const [webglSupported, setWebglSupported] = useState(true);
 
   useEffect(() => {
+    try {
+      const canvas = document.createElement('canvas');
+      const supported = !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+      setWebglSupported(supported);
+    } catch (e) {
+      setWebglSupported(false);
+    }
+
     const img = new Image();
     img.src = src;
     img.onload = () => {
@@ -236,38 +264,44 @@ export const RevealWaveImage = ({
     };
   }, [src]);
 
+  if (!webglSupported) {
+    return <img src={src} className={className} style={{ objectFit: 'cover' }} alt="Corporate Chauffeur" />;
+  }
+
   return (
     <div
       className={`relative overflow-hidden ${className}`}
       onMouseEnter={() => setIsMouseInCanvas(true)}
       onMouseLeave={() => setIsMouseInCanvas(false)}
     >
-      {aspectRatio !== null && (
-        <Canvas
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
-          gl={{ antialias: false }}
-          camera={{ position: [0, 0, 1] }}
-        >
-          <Suspense fallback={null}>
-            <ImagePlane
-              src={src}
-              aspectRatio={aspectRatio}
-              revealRadius={revealRadius}
-              revealSoftness={revealSoftness}
-              pixelSize={pixelSize}
-              waveSpeed={waveSpeed}
-              waveFrequency={waveFrequency}
-              waveAmplitude={waveAmplitude}
-              mouseRadius={mouseRadius}
-              isMouseInCanvas={isMouseInCanvas}
-            />
-          </Suspense>
-        </Canvas>
-      )}
+      <ErrorBoundary fallback={<img src={src} className={className} style={{ objectFit: 'cover' }} alt="Corporate Chauffeur" />}>
+        {aspectRatio !== null && (
+          <Canvas
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+            }}
+            gl={{ antialias: false }}
+            camera={{ position: [0, 0, 1] }}
+          >
+            <Suspense fallback={null}>
+              <ImagePlane
+                src={src}
+                aspectRatio={aspectRatio}
+                revealRadius={revealRadius}
+                revealSoftness={revealSoftness}
+                pixelSize={pixelSize}
+                waveSpeed={waveSpeed}
+                waveFrequency={waveFrequency}
+                waveAmplitude={waveAmplitude}
+                mouseRadius={mouseRadius}
+                isMouseInCanvas={isMouseInCanvas}
+              />
+            </Suspense>
+          </Canvas>
+        )}
+      </ErrorBoundary>
     </div>
   );
 };
