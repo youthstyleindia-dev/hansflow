@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { RevealWaveImage } from './components/ui/reveal-wave-image';
 import {
   ArrowRight,
   CalendarDays,
