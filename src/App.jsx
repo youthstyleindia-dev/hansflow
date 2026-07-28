@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { RevealWaveImage } from './components/ui/reveal-wave-image';
 import {
   ArrowRight,
   CalendarDays,
@@ -562,13 +563,19 @@ export default function HansFlowLandingPage() {
                 </div>
               </div>
 
-              <div className="relative min-h-[280px]">
-                <img
+              <div className="relative min-h-[280px] overflow-hidden">
+                <RevealWaveImage
                   src="/assets/images/lifestyle_drive.jpg"
-                  alt="Luxury sedan on a city road"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  waveSpeed={0.2}
+                  waveFrequency={0.7}
+                  waveAmplitude={0.5}
+                  revealRadius={0.5}
+                  revealSoftness={1}
+                  pixelSize={2}
+                  mouseRadius={0.4}
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-l from-[#071b46] via-[#071b46]/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-l from-[#071b46] via-[#071b46]/25 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
