@@ -259,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
         returnDateInput.value = formatDate(threeDaysLater);
         returnDateInput.min = formatDate(today);
         
-        // Ensure Return Date cannot be before Pickup Date
         pickupDateInput.addEventListener('change', () => {
             returnDateInput.min = pickupDateInput.value;
             if (new Date(returnDateInput.value) < new Date(pickupDateInput.value)) {
@@ -270,201 +269,129 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal elements
     const bookingModal = document.getElementById('booking-modal');
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalClose = document.getElementById('modal-close');
-    const bookTriggers = document.querySelectorAll('.book-trigger');
+    const modalOverlay  = document.getElementById('modal-overlay');
+    const modalClose    = document.getElementById('modal-close');
+    const bookTriggers  = document.querySelectorAll('.book-trigger');
     
-    // Steps & Panes
     const modalSteps = document.querySelectorAll('.modal-step');
     const modalPanes = document.querySelectorAll('.modal-pane');
     
-    // Data placeholders
-    let selectedCar = '';
-    let dailyRate = 0;
+    let selectedCar   = '';
+    let dailyRate     = 0;
     let pickupLocation = 'Marol, Andheri East';
     let returnLocation = 'Marol, Andheri East';
-    let rentalDays = 3;
-    let totalCost = 0;
+    let rentalDays    = 3;
+    let totalCost     = 0;
 
-    // Open Modal function
+    const goToStep = (stepNumber) => {
+        modalSteps.forEach(step => {
+            const n = parseInt(step.getAttribute('data-step'));
+            step.classList.toggle('active', n <= stepNumber);
+        });
+        modalPanes.forEach(pane => pane.classList.remove('active'));
+        const target = document.getElementById(`pane-${stepNumber}`);
+        if (target) target.classList.add('active');
+    };
+
     const openModal = (carName, carPrice) => {
         selectedCar = carName;
-        dailyRate = parseInt(carPrice);
+        dailyRate   = parseInt(carPrice);
         
-        // Retrieve values from Hero form if completed
-        const formPickup = document.getElementById('pickup-loc').value;
-        const formReturn = document.getElementById('return-loc').value;
-        const formPickupDate = document.getElementById('pickup-date').value;
-        const formReturnDate = document.getElementById('return-date').value;
+        const formPickup     = document.getElementById('pickup-loc')?.value;
+        const formReturn     = document.getElementById('return-loc')?.value;
+        const formPickupDate = document.getElementById('pickup-date')?.value;
+        const formReturnDate = document.getElementById('return-date')?.value;
         
         if (formPickup) pickupLocation = formPickup;
         if (formReturn) returnLocation = formReturn;
         
         if (formPickupDate && formReturnDate) {
-            const diffTime = Math.abs(new Date(formReturnDate) - new Date(formPickupDate));
-            rentalDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) || 1;
+            const diff = Math.abs(new Date(formReturnDate) - new Date(formPickupDate));
+            rentalDays = Math.ceil(diff / (1000 * 60 * 60 * 24)) || 3;
         }
         
         totalCost = dailyRate * rentalDays;
         
-        // Update summary pane fields
-        document.getElementById('summary-car').textContent = selectedCar;
-        document.getElementById('summary-loc').textContent = `${pickupLocation} ➔ ${returnLocation}`;
-        document.getElementById('summary-duration').textContent = `${rentalDays} Day${rentalDays > 1 ? 's' : ''}`;
-        document.getElementById('summary-rate').textContent = `$${dailyRate}`;
-        document.getElementById('summary-total').textContent = `$${totalCost.toLocaleString()}`;
+        // Populate Step 1 display
+        const modalCarName  = document.getElementById('modal-car-name');
+        const modalCarPrice = document.getElementById('modal-car-price');
+        if (modalCarName)  modalCarName.textContent  = carName;
+        if (modalCarPrice) modalCarPrice.textContent = `₹${dailyRate.toLocaleString('en-IN')} / day`;
         
-        // Set back to step 1
+        // Populate Step 3 summary
+        const serviceEl = document.getElementById('service-type');
+        const serviceVal = serviceEl ? (serviceEl.value || 'Car Rental') : 'Car Rental';
+        const sumCar     = document.getElementById('summary-car');
+        const sumService = document.getElementById('summary-service');
+        const sumLoc     = document.getElementById('summary-loc');
+        const sumDays    = document.getElementById('summary-days');
+        const sumTotal   = document.getElementById('summary-total');
+        if (sumCar)     sumCar.textContent     = carName;
+        if (sumService) sumService.textContent = serviceVal;
+        if (sumLoc)     sumLoc.textContent     = `${pickupLocation} → ${returnLocation}`;
+        if (sumDays)    sumDays.textContent    = `${rentalDays} Day${rentalDays > 1 ? 's' : ''}`;
+        if (sumTotal)   sumTotal.textContent   = `₹${totalCost.toLocaleString('en-IN')}`;
+        
         goToStep(1);
-        
-        // Display Modal
         bookingModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
 
-    // Close Modal function
     const closeModal = () => {
         bookingModal.classList.remove('active');
         document.body.style.overflow = 'auto';
-        
-        // Reset upload zone and form
-        const successIndicator = document.getElementById('upload-success-indicator');
-        if (successIndicator) successIndicator.style.display = 'none';
-        document.getElementById('verification-form').reset();
     };
-
-    const goToStep = (stepNumber) => {
-        modalSteps.forEach(step => {
-            const stepNum = parseInt(step.getAttribute('data-step'));
-            if (stepNum === stepNumber) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
-        });
-        
-        modalPanes.forEach(pane => {
-            pane.classList.remove('active');
-        });
-        
-        document.getElementById(`pane-${stepNumber}`).classList.add('active');
-    };
-
-    // Bind triggers in fleet list
+    
+    // Wire book triggers in fleet grid
     bookTriggers.forEach(btn => {
         btn.addEventListener('click', () => {
-            const car = btn.getAttribute('data-car');
-            const price = btn.getAttribute('data-price');
-            openModal(car, price);
+            openModal(btn.getAttribute('data-car'), btn.getAttribute('data-price'));
         });
     });
 
-    // Bind Hero form submit
+    // Hero form submit → open modal with first fleet car
     const heroForm = document.getElementById('hero-booking-form');
     if (heroForm) {
         heroForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Default search selects the Porsche 911 Carrera as showcase
-            openModal('Porsche 911 Carrera', '350');
+            openModal('Mercedes-Benz S-Class', '4500');
         });
     }
 
-    // Modal Close hooks
-    modalClose.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', closeModal);
-    
-    // Pane navigations
-    const cancelBtns = document.querySelectorAll('.pane-cancel-btn');
-    cancelBtns.forEach(btn => {
-        btn.addEventListener('click', closeModal);
-    });
+    // Close hooks
+    if (modalClose)   modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
-    const nextTriggers = document.querySelectorAll('.pane-next-btn');
-    nextTriggers.forEach(btn => {
+    // Next / Prev buttons inside modal
+    document.querySelectorAll('.modal-next').forEach(btn => {
         btn.addEventListener('click', () => {
-            const nextStep = btn.getAttribute('data-next');
-            if (nextStep) {
-                goToStep(parseInt(nextStep));
-            }
+            const next = parseInt(btn.getAttribute('data-next'));
+            if (next) goToStep(next);
         });
     });
-
-    const prevTriggers = document.querySelectorAll('.pane-prev-btn');
-    prevTriggers.forEach(btn => {
+    document.querySelectorAll('.modal-prev').forEach(btn => {
         btn.addEventListener('click', () => {
-            const prevStep = btn.getAttribute('data-prev');
-            if (prevStep) {
-                goToStep(parseInt(prevStep));
-            }
+            const prev = parseInt(btn.getAttribute('data-prev'));
+            if (prev) goToStep(prev);
         });
     });
 
-    // Step 2 Verification file upload mock
-    const uploadZone = document.getElementById('license-upload-zone');
-    const fileInput = document.getElementById('license-file');
-    const uploadIndicator = document.getElementById('upload-success-indicator');
-    
-    if (uploadZone && fileInput && uploadIndicator) {
-        uploadZone.addEventListener('click', () => {
-            fileInput.click();
-        });
-        
-        uploadZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadZone.classList.add('dragover');
-        });
-        
-        uploadZone.addEventListener('dragleave', () => {
-            uploadZone.classList.remove('dragover');
-        });
-        
-        uploadZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadZone.classList.remove('dragover');
-            if (e.dataTransfer.files.length) {
-                uploadIndicator.style.display = 'inline-flex';
-            }
-        });
-        
-        fileInput.addEventListener('change', () => {
-            if (fileInput.files.length) {
-                uploadIndicator.style.display = 'inline-flex';
-            }
-        });
-    }
+    // Confirm booking → show success pane
+    const confirmBtn = document.getElementById('confirm-booking');
+    if (confirmBtn) {
+        confirmBtn.addEventListener('click', () => {
+            const bookingId = `HF-${Math.floor(100000 + Math.random() * 900000)}`;
+            const elId   = document.getElementById('success-booking-id');
+            const elCar  = document.getElementById('success-car-name');
+            const elLoc  = document.getElementById('success-delivery-loc');
+            if (elId)  elId.textContent  = bookingId;
+            if (elCar) elCar.textContent = selectedCar;
+            if (elLoc) elLoc.textContent = pickupLocation;
 
-    // Handle verification form submit to trigger Step 3
-    const verificationForm = document.getElementById('verification-form');
-    if (verificationForm) {
-        verificationForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Random Booking ID generator
-            const bookingIdNum = Math.floor(100000 + Math.random() * 900000);
-            const bookingId = `VL-${bookingIdNum}`;
-            
-            // Populate Success screen values
-            document.getElementById('success-booking-id').textContent = bookingId;
-            document.getElementById('success-vehicle-name').textContent = selectedCar;
-            document.getElementById('success-delivery-loc').textContent = `${pickupLocation}`;
-            
-            // Calculate contact schedule (e.g. delivered tomorrow morning)
-            const deliveryTime = new Date();
-            deliveryTime.setDate(deliveryTime.getDate() + 1);
-            deliveryTime.setHours(9, 0, 0, 0); // 9:00 AM
-            
-            const options = { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-            document.getElementById('success-delivery-time').textContent = deliveryTime.toLocaleDateString('en-US', options);
-            
-            // Direct to Step 3 (Success confirmation screen)
-            goToStep(3);
+            modalPanes.forEach(p => p.classList.remove('active'));
+            const successPane = document.getElementById('pane-success');
+            if (successPane) successPane.classList.add('active');
         });
-    }
-
-    // Success Close button returns to main page
-    const successCloseBtn = document.querySelector('.success-close-btn');
-    if (successCloseBtn) {
-        successCloseBtn.addEventListener('click', closeModal);
     }
 
 
@@ -472,23 +399,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. NEWSLETTER SUBSCRIPTION FLOW
     // ==========================================================================
     const newsletterForm = document.getElementById('newsletter-form');
-    const newsletterMsg = document.getElementById('newsletter-msg');
+    const newsletterMsg  = document.getElementById('newsletter-msg');
     
     if (newsletterForm && newsletterMsg) {
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
             const emailInput = document.getElementById('newsletter-email');
-            const emailVal = emailInput.value.trim();
-            
+            const emailVal = emailInput?.value.trim();
             if (emailVal) {
-                newsletterMsg.style.color = '#10B981'; // Success Green
+                newsletterMsg.style.color = '#10B981';
                 newsletterMsg.textContent = 'Thank you! You have subscribed to Hansflow exclusive offers.';
-                emailInput.value = '';
-                
-                setTimeout(() => {
-                    newsletterMsg.textContent = '';
-                }, 5000);
+                if (emailInput) emailInput.value = '';
+                setTimeout(() => { newsletterMsg.textContent = ''; }, 5000);
             }
         });
     }
