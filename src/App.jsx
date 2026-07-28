@@ -122,11 +122,11 @@ const faq = [
 
 function LogoMark() {
   return (
-    <div className="flex items-center gap-3 select-none">
-      <img src="/assets/images/logo_light.png" alt="Hansflow Logo" className="h-10 w-auto object-contain filter invert" />
+    <div className="flex items-center gap-5 select-none">
+      <img src="/assets/images/logo_light.png" alt="Hansflow Logo" className="h-[68px] w-auto object-contain filter invert" />
       <div>
-        <div className="text-[0.95rem] font-semibold tracking-[0.38em] text-[#071b46]">HANSFLOW</div>
-        <div className="text-[0.63rem] tracking-[0.35em] text-[#8a8f98]">DRIVE WITH GRACE</div>
+        <div className="text-[1.6rem] font-semibold tracking-[0.38em] text-[#071b46] leading-none">HANSFLOW</div>
+        <div className="text-[1.07rem] tracking-[0.35em] text-[#8a8f98] mt-1.5">DRIVE WITH GRACE</div>
       </div>
     </div>
   );
