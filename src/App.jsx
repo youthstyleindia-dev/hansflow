@@ -564,16 +564,10 @@ export default function HansFlowLandingPage() {
               </div>
 
               <div className="relative min-h-[280px] overflow-hidden">
-                <RevealWaveImage
+                <img
                   src="/assets/images/lifestyle_drive.jpg"
-                  waveSpeed={0.2}
-                  waveFrequency={0.7}
-                  waveAmplitude={0.5}
-                  revealRadius={0.5}
-                  revealSoftness={1}
-                  pixelSize={2}
-                  mouseRadius={0.4}
                   className="absolute inset-0 w-full h-full object-cover"
+                  alt="Corporate Chauffeur"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-[#071b46] via-[#071b46]/25 to-transparent pointer-events-none" />
               </div>
