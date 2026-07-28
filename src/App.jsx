@@ -298,9 +298,12 @@ export default function HansFlowLandingPage() {
                 className="relative mx-auto max-w-xl"
               >
                 <div className="overflow-hidden rounded-[2rem] border border-white/15 bg-white/5 shadow-[0_30px_100px_rgba(0,0,0,0.35)] glass">
-                  <img
-                    src="/assets/images/lifestyle_drive.jpg"
-                    alt="Luxury Mercedes chauffeur car"
+                  <video
+                    src="https://ik.imagekit.io/35gxst7xf/example.com"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="h-[420px] w-full object-cover"
                   />
                 </div>
