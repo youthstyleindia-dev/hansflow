@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState, useEffect } from 'react';
+import React, { useMemo, useRef, useState, useEffect, Suspense } from 'react';
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
@@ -252,18 +252,20 @@ export const RevealWaveImage = ({
           gl={{ antialias: false }}
           camera={{ position: [0, 0, 1] }}
         >
-          <ImagePlane
-            src={src}
-            aspectRatio={aspectRatio}
-            revealRadius={revealRadius}
-            revealSoftness={revealSoftness}
-            pixelSize={pixelSize}
-            waveSpeed={waveSpeed}
-            waveFrequency={waveFrequency}
-            waveAmplitude={waveAmplitude}
-            mouseRadius={mouseRadius}
-            isMouseInCanvas={isMouseInCanvas}
-          />
+          <Suspense fallback={null}>
+            <ImagePlane
+              src={src}
+              aspectRatio={aspectRatio}
+              revealRadius={revealRadius}
+              revealSoftness={revealSoftness}
+              pixelSize={pixelSize}
+              waveSpeed={waveSpeed}
+              waveFrequency={waveFrequency}
+              waveAmplitude={waveAmplitude}
+              mouseRadius={mouseRadius}
+              isMouseInCanvas={isMouseInCanvas}
+            />
+          </Suspense>
         </Canvas>
       )}
     </div>
